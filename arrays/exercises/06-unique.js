@@ -5,6 +5,4 @@
  * @param {Array<string | number>} array - Array of primitive data types
  * @returns {Array}
  */
-export const unique = (array) => {
-  throw new Error(`put your solution here ${array}`);
-};
+export const unique = (array) => ([...new Set(array)]);
