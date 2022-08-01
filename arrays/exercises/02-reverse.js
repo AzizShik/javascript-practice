@@ -5,6 +5,4 @@
  * @param {Array} array - Array of any elements
  * @returns {Array}
  */
-export const reverse = (array) => {
-  throw new Error(`put your solution here ${array}`);
-};
+export const reverse = (array) => JSON.parse(JSON.stringify(array)).reverse();
