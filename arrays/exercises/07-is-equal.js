@@ -7,5 +7,13 @@
  * @returns {boolean}
  */
 export const isEqual = (firstArray, secondArray) => {
-  throw new Error(`put your solution here ${firstArray} ${secondArray}`);
+  let res;
+
+  if (firstArray.length !== secondArray.length) return false;
+
+  for (let i = 0; i <= firstArray.length - 1; i += 1) {
+    res = firstArray[i] === secondArray[i];
+  }
+
+  return res;
 };
