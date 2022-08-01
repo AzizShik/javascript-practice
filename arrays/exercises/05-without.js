@@ -7,5 +7,11 @@
  * @returns {Array}
  */
 export const without = (array, ...args) => {
-  throw new Error(`put your solution here ${array} ${args}`);
+  let newArr = JSON.parse(JSON.stringify(array));
+
+  for (let i = 0; i <= args.length - 1; i += 1) {
+    newArr = newArr.filter((e) => e !== args[i]);
+  }
+
+  return newArr;
 };
