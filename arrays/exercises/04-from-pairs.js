@@ -6,5 +6,11 @@
  * @returns {Array}
  */
 export const fromPairs = (array) => {
-  throw new Error(`put your solution here ${array}`);
+  const newObj = {};
+
+  array.forEach((e) => {
+    newObj[e[0]] = e[1];
+  });
+
+  return newObj;
 };
