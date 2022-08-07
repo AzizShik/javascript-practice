@@ -6,5 +6,14 @@
  * @returns {Array}
  */
 export const intersection = (...arrays) => {
-  throw new Error(`put your solution here ${arrays}`);
+  const result = arrays[0].filter((element) => {
+    const indexOfElement = arrays[1].indexOf(element);
+    if (indexOfElement >= 0) {
+      return element;
+    }
+  });
+  if (arrays.length > 2) {
+    intersection(result, ...arrays.slice(2, arrays.length));
+  }
+  return Array.from(new Set(result));
 };
