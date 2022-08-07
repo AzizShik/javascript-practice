@@ -5,6 +5,4 @@
  * @param {Array} array - A deep array
  * @returns {Array}
  */
-export const flatten = (array) => {
-  throw new Error(`put your solution here ${array}`);
-};
+export const flatten = (array) => array.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatten(val) : val), []);
