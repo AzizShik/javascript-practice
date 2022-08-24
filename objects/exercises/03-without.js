@@ -7,5 +7,13 @@
  * @returns {Object} - New object without listed values
  */
 export const without = (object, ...args) => {
-  throw new Error(`put your solution here ${object} ${args}`);
+  const newObj = {};
+
+  for (const key in object) {
+    if (!args.includes(key)) {
+      newObj[key] = object[key];
+    }
+  }
+
+  return newObj;
 };

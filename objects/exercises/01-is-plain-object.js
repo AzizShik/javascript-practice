@@ -5,6 +5,4 @@
  * @param element - element to verify
  * @returns {boolean}
  */
-export const isPlainObject = (element) => {
-  throw new Error(`put your solution here ${element}`);
-};
+export const isPlainObject = (element) => element instanceof Object && element.constructor === Object;

@@ -6,6 +6,14 @@
  * @param {Object} object - Object with values of primitive data types
  * @returns {boolean}
  */
+
+const emptyValues = ['', null, NaN, undefined];
+
 export const isEmpty = (object) => {
-  throw new Error(`put your solution here ${object}`);
+  for (const key in object) {
+    if (!emptyValues.includes(object[key])) {
+      return false;
+    }
+  }
+  return true;
 };
