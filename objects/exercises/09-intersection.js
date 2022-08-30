@@ -6,5 +6,16 @@
  * @returns {Object}
  */
 export const intersection = (firstObj, secondObj) => {
-  throw new Error(`put your solution here ${firstObj} ${secondObj}`);
+  const firstObjKeys = Object.keys(firstObj);
+
+  return firstObjKeys.reduce((acc = {}, key) => {
+    if (firstObj[key] === secondObj[key]) {
+      acc = {
+        ...acc,
+        [key]: firstObj[key],
+      };
+    }
+
+    return acc;
+  }, {});
 };

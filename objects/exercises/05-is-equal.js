@@ -7,5 +7,12 @@
  * @returns {boolean}
  */
 export const isEqual = (firstObj, secondObj) => {
-  throw new Error(`put your solution here ${firstObj} ${secondObj}`);
+  const firstObjKeys = Object.keys(firstObj);
+  const secondObjKeys = Object.keys(secondObj);
+
+  if (firstObjKeys.length !== secondObjKeys.length) {
+    return false;
+  }
+
+  return !firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length;
 };

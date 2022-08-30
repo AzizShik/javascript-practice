@@ -9,5 +9,12 @@
  * @returns {boolean}
  */
 export const invoke = (object, path, func, args) => {
-  throw new Error(`put your solution here ${object} ${path} ${func} ${args}`);
+  const splittedPath = path.split('.');
+
+  const target = splittedPath.reduce((acc, key) => {
+    acc = acc[key] ? acc[key] : object[key];
+    return acc;
+  }, {});
+
+  return Array.prototype[func].apply(target, args);
 };
